@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.data.redis.core.RedisTemplate;
 
-import java.time.LocalTime;
 import java.util.TreeMap;
 
 /**
@@ -12,11 +11,11 @@ import java.util.TreeMap;
  * @Create: 2023/7/15 - 22:29
  */
 @Slf4j
-public class SimpleWindowTest {
+public class FixedWindowTest {
     @Test
     public void test1() throws InterruptedException {
         RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
-        SimpleWindowStrategy simpleWindow = new SimpleWindowStrategy(redisTemplate);
+        FixedWindowStrategy simpleWindow = new FixedWindowStrategy(redisTemplate);
         TreeMap<String, String> map = new TreeMap<>();
         map.put("SimpleWindow", "low");
         FuseModel fuseModel = new FuseModel("test", map, 1, 10, 2);
@@ -32,7 +31,7 @@ public class SimpleWindowTest {
     @Test
     public void test2() throws InterruptedException {
         RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
-        SimpleWindowStrategy simpleWindow = new SimpleWindowStrategy(redisTemplate);
+        FixedWindowStrategy simpleWindow = new FixedWindowStrategy(redisTemplate);
         TreeMap<String, String> map = new TreeMap<>();
         map.put("SimpleWindow", "low");
         FuseModel fuseModel = new FuseModel("test", map, 1, 10, 2);
@@ -52,7 +51,7 @@ public class SimpleWindowTest {
     @Test
     public void test3() throws InterruptedException {
         RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
-        SimpleWindowStrategy simpleWindow = new SimpleWindowStrategy(redisTemplate);
+        FixedWindowStrategy simpleWindow = new FixedWindowStrategy(redisTemplate);
         TreeMap<String, String> map = new TreeMap<>();
         map.put("SimpleWindow", "low");
         FuseModel fuseModel = new FuseModel("test", map, 1, 10, 2);

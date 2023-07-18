@@ -17,19 +17,19 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Author: Xjx
  * @Create: 2023/7/15 - 21:30
  */
-public class SimpleWindowStrategy extends AbstractFuseStrategy{
+public class FixedWindowStrategy extends AbstractFuseStrategy{
     AtomicInteger count;
 
     private static Map<String, AtomicInteger> countMap = new HashMap<>();
     private static long startTime = System.currentTimeMillis();
 
-    public SimpleWindowStrategy(RedisTemplate<String, String> redisTemplate) {
+    public FixedWindowStrategy(RedisTemplate<String, String> redisTemplate) {
         super(redisTemplate);
     }
 
     @Override
     protected FuseStrategyEnum getStrategyEnum() {
-        return FuseStrategyEnum.Simple_Window;
+        return FuseStrategyEnum.Fixed_Window;
     }
 
     @Override
