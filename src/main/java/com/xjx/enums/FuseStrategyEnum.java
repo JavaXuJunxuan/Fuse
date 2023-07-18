@@ -7,6 +7,10 @@ package com.xjx.enums;
  */
 public enum FuseStrategyEnum {
     /**
+     * 固定窗口策略定义
+     */
+    Simple_Window("固定窗口实现","SimpleWindow"),
+    /**
      * 滑动时间（日志）窗口策略定义
      */
     MOVE_DATE_WINDOW("滑动窗口实现", "MoveDateWindow");
