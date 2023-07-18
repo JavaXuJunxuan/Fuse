@@ -14,8 +14,7 @@ import java.util.TreeMap;
 public class SlidingWindowTest {
     @Test
     public void test1() throws InterruptedException {
-        RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
-        SlidingWindowStrategy slidingWindowStrategy = new SlidingWindowStrategy(redisTemplate);
+        SlidingWindowStrategy slidingWindowStrategy = new SlidingWindowStrategy();
         TreeMap<String, String> map = new TreeMap<>();
         map.put("SlidingWindow", "low");
         FuseModel fuseModel = new FuseModel("test", map, 1, 3, 1);

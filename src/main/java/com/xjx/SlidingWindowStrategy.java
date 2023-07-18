@@ -14,19 +14,16 @@ public class SlidingWindowStrategy extends AbstractFuseStrategy{
     private Integer windowCount = 10;
     private WindowInfo[] windowArray;
 
-    public SlidingWindowStrategy(RedisTemplate<String, String> redisTemplate) {
-        super(redisTemplate);
+    public SlidingWindowStrategy() {
+    }
+
+    public SlidingWindowStrategy(Integer windowCount) {
         long currentTimeMillis = System.currentTimeMillis();
+        this.windowCount = windowCount;
         this.windowArray = new WindowInfo[windowCount];
         for (int i = 0; i < windowArray.length; i++) {
             windowArray[i] = new WindowInfo(currentTimeMillis, new AtomicInteger(0));
         }
-    }
-
-    public SlidingWindowStrategy(RedisTemplate<String, String> redisTemplate, Integer windowCount) {
-        super(redisTemplate);
-        this.windowCount = windowCount;
-        this.windowArray = new WindowInfo[windowCount];
     }
 
     @Override

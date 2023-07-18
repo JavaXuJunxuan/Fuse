@@ -18,6 +18,9 @@ public abstract class AbstractFuseStrategy {
     private static final String BLACK_LIST = "BLACK";
     protected static final String KEY_PREFIX = "XJX_FUSE";
 
+    public AbstractFuseStrategy() {
+    }
+
     public AbstractFuseStrategy(RedisTemplate<String, String> redisTemplate) {
         this.redisTemplate = redisTemplate;
     }

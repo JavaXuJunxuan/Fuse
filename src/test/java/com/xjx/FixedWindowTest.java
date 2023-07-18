@@ -15,7 +15,7 @@ public class FixedWindowTest {
     @Test
     public void test1() throws InterruptedException {
         RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
-        FixedWindowStrategy simpleWindow = new FixedWindowStrategy(redisTemplate);
+        FixedWindowStrategy simpleWindow = new FixedWindowStrategy();
         TreeMap<String, String> map = new TreeMap<>();
         map.put("SimpleWindow", "low");
         FuseModel fuseModel = new FuseModel("test", map, 1, 10, 2);
@@ -31,7 +31,7 @@ public class FixedWindowTest {
     @Test
     public void test2() throws InterruptedException {
         RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
-        FixedWindowStrategy simpleWindow = new FixedWindowStrategy(redisTemplate);
+        FixedWindowStrategy simpleWindow = new FixedWindowStrategy();
         TreeMap<String, String> map = new TreeMap<>();
         map.put("SimpleWindow", "low");
         FuseModel fuseModel = new FuseModel("test", map, 1, 10, 2);
@@ -51,7 +51,7 @@ public class FixedWindowTest {
     @Test
     public void test3() throws InterruptedException {
         RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
-        FixedWindowStrategy simpleWindow = new FixedWindowStrategy(redisTemplate);
+        FixedWindowStrategy simpleWindow = new FixedWindowStrategy();
         TreeMap<String, String> map = new TreeMap<>();
         map.put("SimpleWindow", "low");
         FuseModel fuseModel = new FuseModel("test", map, 1, 10, 2);

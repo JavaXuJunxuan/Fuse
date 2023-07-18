@@ -15,6 +15,10 @@ public enum FuseStrategyEnum {
      */
     Sliding_WINDOW("滑动窗口实现", "SlidingWindow"),
     /**
+     * 滑动日志(时间)策略定义:单体实现
+     */
+    Sliding_LOG_WINDOW("滑动日志实现", "SlidingLogWindow"),
+    /**
      * 滑动时间（日志）窗口策略定义:分布式实现
      */
     MOVE_DATE_WINDOW("滑动窗口实现", "MoveDateWindow");

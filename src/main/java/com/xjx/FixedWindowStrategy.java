@@ -23,10 +23,6 @@ public class FixedWindowStrategy extends AbstractFuseStrategy{
     private static Map<String, AtomicInteger> countMap = new HashMap<>();
     private static long startTime = System.currentTimeMillis();
 
-    public FixedWindowStrategy(RedisTemplate<String, String> redisTemplate) {
-        super(redisTemplate);
-    }
-
     @Override
     protected FuseStrategyEnum getStrategyEnum() {
         return FuseStrategyEnum.Fixed_Window;
